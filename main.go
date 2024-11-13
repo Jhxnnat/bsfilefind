@@ -175,10 +175,14 @@ func main() {
 		}
 
 		matches := s_query(files, input)
+    if len(matches) <= 0 {
+      fmt.Println("No matches found...")
+    } else {
+      fmt.Println("\nMatches:")
+      for _, m := range matches {
+        fmt.Printf("	>_ %s\n", files[m].name)
+      }
+    }
 
-		fmt.Println("\nMatches:")
-		for _, m := range matches {
-			fmt.Printf("	>_ %s\n", files[m].name)
-		}
 	}
 }
